@@ -5,7 +5,7 @@
 //  After editing, open index.html in a browser to check it still works.
 //  If a page goes blank, you've probably lost a comma or a quote mark.
 //
-//  Dates are always written as "YYYY-MM-DD"  (e.g. "2026-09-07").
+//  Dates are always written as "YYYY-MM-DD"  (e.g. "2026-09-21").
 //  Text can have blank lines in it to make paragraphs — use \n\n.
 //  Anything marked TODO is still blank and shows as "(nothing written yet)".
 // =====================================================================
@@ -62,8 +62,8 @@ window.SITE = {
       url: "https://cs50.harvard.edu/x/",
       approved: "2026-09-07",   // TODO change to the date your teacher approved it, if different
       status: "active",
-      progress: 5,
-      progressNote: "Week 0 of 10 — Scratch",
+      progress: 15,             // TODO adjust if you're further along than I guessed
+      progressNote: "Week 1 of 10 — C and the command line",
       why: "I had multiple things I wanted to work on, including preparing for the SAT, but I chose to improve my computer science skills."
       // completed: "2027-01-15",   <- add this line when you finish
     }
@@ -75,12 +75,14 @@ window.SITE = {
   //  The journal page has a "Copy a blank entry" button that gives you
   //  a template with the next week and date already filled in.
   //
-  //  score: 100, 89, 79 or 69 — from the course rubric
+  //  score: your course rubric lists 100, 89, 79 and 69.
+  //         Other numbers still display, but they won't match a rubric
+  //         band, so check what your teacher expects.
   //  teacherScore: leave as null until you've checked ManageBac
   // ------------------------------------------------------------------
   journal: [
     {
-      week: 1,
+      week: 2,
       date: "2026-09-07",
       course: "CS50: Introduction to Computer Science",
       workedOn: "I worked on choosing my topic and eventually decided on CS50. I also watched the introductory video and got started on Week 0, which introduces CS50 and Scratch.",
@@ -90,6 +92,30 @@ window.SITE = {
       teacherScore: null,  // fill in after checking ManageBac
       teacherNote: "",
       nextTime: "Next time I will focus and start doing the course as soon as the class begins, to prevent getting off task."
+    },
+    {
+      week: 3,
+      date: "2026-09-14",
+      course: "CS50: Introduction to Computer Science",
+      workedOn: "I watched the video moving on from Scratch into C, and learned the fundamental basics of the C language and how it works using a simple starter program.",
+      challenge: "Generally, remembering the names of the parts of the code that C needs in order to compile.",
+      score: 90,           // TODO not one of the rubric bands (100 / 89 / 79 / 69)
+      scoreWhy: "It went decently and I absorbed a good amount of information, but some of what I covered was material I already knew.",
+      teacherScore: null,  // fill in after checking ManageBac
+      teacherNote: "",
+      nextTime: "I would skip ahead to a more challenging and unfamiliar part once I can tell I already know the material, and start working on the CS50 project."
+    },
+    {
+      week: 4,
+      date: "2026-09-21",
+      course: "CS50: Introduction to Computer Science",
+      workedOn: "I watched the video moving further into C, plus a brief introduction to the command line interface and the fundamental basics of Linux. I also hosted this progress website on GitHub Pages so that it is publicly available.",
+      challenge: "Creating a workflow that deploys the pages once there is a commit or a push to GitHub.",
+      score: 95,           // TODO not one of the rubric bands (100 / 89 / 79 / 69)
+      scoreWhy: "It went pretty well and I picked up a couple of new concepts. I rate myself highly because of the amount of work I got through today.",
+      teacherScore: null,  // fill in after checking ManageBac
+      teacherNote: "",
+      nextTime: "I would start working on the CS50 final project instead of watching videos for the whole class."
     }
   ],
 
@@ -112,18 +138,16 @@ window.SITE = {
   //  something that lives online (a GitHub repo, a Scratch project).
   //
   //  type: "certificate" | "screenshot" | "project"
-  //
-  //  Example:
-  //    {
-  //      title: "Week 0 Scratch project",
-  //      type: "project",
-  //      date: "2026-09-14",
-  //      course: "CS50: Introduction to Computer Science",
-  //      file: "",
-  //      url: "https://scratch.mit.edu/projects/…",
-  //      caption: "My first Scratch game, submitted for Week 0."
-  //    }
   // ------------------------------------------------------------------
   evidence: [
+    {
+      title: "This portfolio, live on GitHub Pages",
+      type: "project",
+      date: "2026-09-21",
+      course: "CS50: Introduction to Computer Science",
+      file: "",
+      url: "https://cyli310.github.io/VLD/",
+      caption: "Built and deployed the VLD progress site myself, including getting it to redeploy on every push."
+    }
   ]
 };

@@ -56,6 +56,19 @@
   }
   function hasValue(v) { return v !== null && v !== undefined && String(v).trim() !== ""; }
 
+  // The rubric has fixed bands (100 / 89 / 79 / 69). If a score isn't one of
+  // them, colour the badge using the closest band so it still reads sensibly,
+  // while the badge keeps showing the number that was actually written.
+  function scoreBand(score) {
+    var n = Number(score);
+    var bands = Object.keys(rubric).map(Number).filter(function (b) { return !isNaN(b); });
+    if (!bands.length || isNaN(n)) return "";
+    if (bands.indexOf(n) >= 0) return String(n);
+    return String(bands.reduce(function (best, b) {
+      return Math.abs(b - n) < Math.abs(best - n) ? b : best;
+    }, bands[0]));
+  }
+
   /* ---------- data ----------------------------------------------------- */
   var L = S.learner || {};
   var courses = Array.isArray(S.courses) ? S.courses : [];
@@ -161,7 +174,7 @@
     h += '<div class="entry-head"><div class="title">Week ' + esc(e.week) +
       '<span class="sep">·</span>' + fmtDate(e.date) +
       '<span class="sep">·</span>Course: <span class="name">' + esc(e.course) + "</span></div>";
-    h += '<span class="score" data-score="' + esc(e.score) + '" title="Self-score">' + esc(e.score) + "<small>self</small></span></div>";
+    h += '<span class="score" data-score="' + esc(scoreBand(e.score)) + '" title="Self-score">' + esc(e.score) + "<small>self</small></span></div>";
     h += '<div class="entry-body">';
     h += question(1, "What did I work on today?", paras(e.workedOn));
     h += question(2, "What was challenging, and how did I handle it?", paras(e.challenge));
@@ -244,7 +257,7 @@
       h += "<section>";
       h += '<div class="kicker">Latest reflection</div>';
       h += '<article class="card"><h2 style="font-size:1.25rem">Week ' + esc(e.week) + ' · ' + fmtDate(e.date) + ' · ' + esc(e.course) + "</h2>";
-      h += '<div class="score-row"><span class="score" data-score="' + esc(e.score) + '">' + esc(e.score) + "<small>self</small></span></div>";
+      h += '<div class="score-row"><span class="score" data-score="' + esc(scoreBand(e.score)) + '">' + esc(e.score) + "<small>self</small></span></div>";
       h += paras(e.workedOn);
       h += '<p class="small" style="margin-top:12px"><a href="journal.html#week-' + esc(e.week) + '">Read the full entry →</a></p>';
       h += "</article></section>";
