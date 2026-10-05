@@ -62,8 +62,8 @@ window.SITE = {
       url: "https://cs50.harvard.edu/x/",
       approved: "2026-09-07",   // TODO change to the date your teacher approved it, if different
       status: "active",
-      progress: 15,             // TODO adjust if you're further along than I guessed
-      progressNote: "Week 1 of 10 — C and the command line",
+      progress: 25,             // TODO adjust if you're further along than I guessed
+      progressNote: "Week 2 of 10 — Arrays and debugging",
       why: "I had multiple things I wanted to work on, including preparing for the SAT, but I chose to improve my computer science skills."
       // completed: "2027-01-15",   <- add this line when you finish
     }
@@ -116,6 +116,18 @@ window.SITE = {
       teacherScore: null,  // fill in after checking ManageBac
       teacherNote: "",
       nextTime: "I would start working on the CS50 final project instead of watching videos for the whole class."
+    },
+    {
+      week: 6,
+      date: "2026-10-05",
+      course: "CS50: Introduction to Computer Science",
+      workedOn: "I watched the video moving on into arrays, which also introduced the fundamental basics of debugging code and the history of debugging.",
+      challenge: "Finding the bugs inside the examples.",
+      score: 95,           // TODO not one of the rubric bands (100 / 89 / 79 / 69)
+      scoreWhy: "It went pretty well and I picked up a couple of new concepts. I also managed to update the website. I rate myself highly because of the amount of work I got through today.",
+      teacherScore: null,  // fill in after checking ManageBac
+      teacherNote: "",
+      nextTime: "I would start working on the CS50 final project next time."
     }
   ],
 
