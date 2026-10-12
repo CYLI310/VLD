@@ -174,12 +174,16 @@
     h += '<div class="entry-head"><div class="title">Week ' + esc(e.week) +
       '<span class="sep">·</span>' + fmtDate(e.date) +
       '<span class="sep">·</span>Course: <span class="name">' + esc(e.course) + "</span></div>";
-    h += '<span class="score" data-score="' + esc(scoreBand(e.score)) + '" title="Self-score">' + esc(e.score) + "<small>self</small></span></div>";
+    h += (hasValue(e.score)
+      ? '<span class="score" data-score="' + esc(scoreBand(e.score)) + '" title="Self-score">' + esc(e.score) + "<small>self</small></span>"
+      : '<span class="score" title="No self-score recorded yet">—<small>self</small></span>') + "</div>";
     h += '<div class="entry-body">';
     h += question(1, "What did I work on today?", paras(e.workedOn));
     h += question(2, "What was challenging, and how did I handle it?", paras(e.challenge));
-    var q3 = '<p class="score-line"><strong>Self-score: ' + esc(e.score) + ".</strong>" +
-      (rubric[e.score] ? ' <span class="muted">' + esc(rubric[e.score]) + "</span>" : "") + "</p>" +
+    var q3 = (hasValue(e.score)
+      ? '<p class="score-line"><strong>Self-score: ' + esc(e.score) + ".</strong>" +
+        (rubric[e.score] ? ' <span class="muted">' + esc(rubric[e.score]) + "</span>" : "") + "</p>"
+      : '<p class="score-line muted"><em>No self-score recorded for this session yet.</em></p>') +
       paras(e.scoreWhy) + teacherLine(e);
     h += question(3, "How well did I run my own learning today?", q3);
     h += question(4, "What will I do differently or keep doing next session?", paras(e.nextTime));
@@ -257,7 +261,9 @@
       h += "<section>";
       h += '<div class="kicker">Latest reflection</div>';
       h += '<article class="card"><h2 style="font-size:1.25rem">Week ' + esc(e.week) + ' · ' + fmtDate(e.date) + ' · ' + esc(e.course) + "</h2>";
-      h += '<div class="score-row"><span class="score" data-score="' + esc(scoreBand(e.score)) + '">' + esc(e.score) + "<small>self</small></span></div>";
+      h += '<div class="score-row">' + (hasValue(e.score)
+        ? '<span class="score" data-score="' + esc(scoreBand(e.score)) + '">' + esc(e.score) + "<small>self</small></span>"
+        : '<span class="score" title="No self-score recorded yet">—<small>self</small></span>') + "</div>";
       h += paras(e.workedOn);
       h += '<p class="small" style="margin-top:12px"><a href="journal.html#week-' + esc(e.week) + '">Read the full entry →</a></p>';
       h += "</article></section>";
