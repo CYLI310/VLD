@@ -22,26 +22,30 @@ window.SITE = {
   // ------------------------------------------------------------------
   learner: {
     name: "Justin",
-    grade: "",            // TODO e.g. "Grade 11"
+    grade: "",            // TODO only you know this — e.g. "Grade 11"
     year: "2026–27",
 
     // One sentence about you as a learner.
-    tagline: "",          // TODO e.g. "I'm more interested in how things work than in memorising facts about them."
+    // DRAFT — rewrite in your own words if it doesn't sound like you.
+    tagline: "I would rather build something badly and then fix it than watch someone explain it perfectly.",
 
     // What you're taking this year and why (Home page).
-    thisYear: "This year I'm taking CS50, Harvard's introduction to computer science, through VLD. I had a few things I wanted to work on, including SAT prep, but I chose to improve my computer science skills.",
+    thisYear: "This year I'm taking CS50, Harvard's introduction to computer science, through VLD. I had a few things I wanted to work on, including SAT prep, but I chose to improve my computer science skills. My final project is a small Python program about machine learning.",
 
     // What you hoped to gain (Learner bio).
-    hopedToGain: "",      // TODO one or two sentences on what you were actually after
+    // DRAFT — rewrite in your own words if it doesn't sound like you.
+    hopedToGain: "I wanted to get far enough into programming to build something of my own, which is why my final project is a small machine learning program in Python. I chose this over SAT prep because I wanted a skill I would actually keep using afterwards.",
 
     // A quote or motto you'd actually say out loud.
+    // DRAFT — this one is in your own words, so `by` is left empty.
     motto: {
-      text: "",           // TODO
+      text: "Stop watching and start building.",
       by: ""
     },
 
     // The one thing you wish someone had told you in week one.
-    adviceForG10: ""      // TODO
+    // DRAFT — rewrite in your own words if it doesn't sound like you.
+    adviceForG10: "Decide fast, then start. I lost most of my first session just picking a course, and a lot of the sessions after that to watching lectures instead of writing code. The videos are there to get you unstuck, not to be finished."
   },
 
   // ------------------------------------------------------------------
@@ -62,8 +66,8 @@ window.SITE = {
       url: "https://cs50.harvard.edu/x/",
       approved: "2026-09-07",   // TODO change to the date your teacher approved it, if different
       status: "active",
-      progress: 35,             // TODO adjust if you're further along than I guessed
-      progressNote: "Week 3 of 10 — algorithms and searching; final project topic finalised",
+      progress: 45,             // TODO adjust if you're further along than I guessed
+      progressNote: "Week 4 of 10 — memory, pointers and hexadecimal",
       why: "I had multiple things I wanted to work on, including preparing for the SAT, but I chose to improve my computer science skills."
       // completed: "2027-01-15",   <- add this line when you finish
     }
@@ -152,6 +156,18 @@ window.SITE = {
       teacherScore: null,  // fill in after checking ManageBac
       teacherNote: "",
       nextTime: "I would go ahead and watch the video from the start."
+    },
+    {
+      week: 10,
+      date: "2026-11-02",
+      course: "CS50: Introduction to Computer Science",
+      workedOn: "I watched the video about how memory addresses and storage work inside programming languages and inside the computer itself. I also learned some more operators in C, and format specifiers such as %p.",
+      challenge: "The difficulty is manageable, but it can be confusing to learn hexadecimal while also learning binary.",
+      score: null,         // TODO add your self-score — 100, 89, 79 or 69
+      scoreWhy: "The learning was good and I learned about memory and some more C knowledge that will help with my CS50 project. I also added some entries to my website.",
+      teacherScore: null,  // fill in after checking ManageBac
+      teacherNote: "",
+      nextTime: "I will keep the same pace as today, as it is actually beneficial."
     }
   ],
 
